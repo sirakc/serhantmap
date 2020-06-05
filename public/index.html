@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <script src="http://www.webglearth.com/v2/api.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+  <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+
+  <script>
+    function initialize() {
+
+
+      var options = { atmosphere: true, sky: true };
+      var earth = new WE.map('earth_div');
+
+      WE.tileLayer('https://api.mapbox.com/styles/v1/thunderrangerx1/ckb2a9p7h0zth1ik2xm6plm5c/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidGh1bmRlcnJhbmdlcngxIiwiYSI6ImNrNzFweWUzZDAxa3MzbW53MDRxaGxybzcifQ.C9Z_o_r22BLSJFfyW4Ewlg', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'your.mapbox.access.token',
+      }).addTo(earth);
+
+      //var marker = WE.marker([51.5, -0.09]).addTo(earth);
+      //marker.bindPopup("<b>Hello world!</b>", { maxWidth: 150, closeButton: true }).openPopup();
+
+      //var marker2 = WE.marker([30.058056, 31.228889]).addTo(earth);
+      //marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!", { maxWidth: 120, closeButton: false });
+
+      var markerCustom = WE.marker([51.5, -0.09], '/ripple.gif', 200, 200).addTo(earth);
+      //markerCustom.bindPopup("hello", { width: 100, height: 100, closeButton: false }).openPopup();
+
+
+
+      /*
+            var before = null;
+            requestAnimationFrame(function animate(now) {
+              var c = earth.getPosition();
+              var elapsed = before ? now - before : 0;
+              before = now;
+              earth.setCenter([c[0], c[1] + 0.1 * (elapsed / 30)]);
+              requestAnimationFrame(animate);
+            });
+            */
+
+    }
+
+  </script>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #earth_div {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute !important;
+    }
+
+    .request-loader {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      width: 150px;
+      border-radius: 100%;
+      background: rgb(255, 255, 255, 0.4);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .request-loader span {
+      position: relative;
+      font-size: 72px;
+      top: 5px;
+      left: -5px;
+    }
+
+    .request-loader::after {
+      opacity: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: 0;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      width: 100%;
+      border: 8px solid rgba(0, 0, 0, 0.2);
+      border-radius: 100%;
+      animation-name: ripple;
+      animation-duration: 3s;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+      z-index: -1;
+    }
+
+    .request-loader::before {
+      opacity: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: 0;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      width: 100%;
+      border: 8px solid rgba(0, 0, 0, 0.2);
+      border-radius: 100%;
+      animation-name: ripple;
+      animation-duration: 3s;
+      animation-delay: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+      z-index: -1;
+    }
+
+    @keyframes ripple {
+      from {
+        opacity: 1;
+        transform: scale3d(0.75, 0.75, 1);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale3d(1.5, 1.5, 1);
+      }
+    }
+  </style>
+  <title>WebGL Earth API: Hello World</title>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+</head>
+
+<body onload="initialize()">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <div style="position: absolute; left: 50%;z-index: 9999;">
+    <div style="position: relative; left: -50%;">
+      <h1 style="color:#160F76;font-size: 50px;width:100%;">
+        SERHANT.</h1>
+    </div>
+  </div>
+
+  <div id="earth_div" style="background-color: #FEFEFE;"></div>
+</body>
+
+</html>
