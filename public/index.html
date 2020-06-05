@@ -21,11 +21,12 @@
   <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
 
   <script>
+    var earth;
     function initialize() {
 
 
       var options = { atmosphere: true, sky: true };
-      var earth = new WE.map('earth_div');
+      earth = new WE.map('earth_div');
 
       WE.tileLayer('https://api.mapbox.com/styles/v1/thunderrangerx1/ckb2a9p7h0zth1ik2xm6plm5c/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidGh1bmRlcnJhbmdlcngxIiwiYSI6ImNrNzFweWUzZDAxa3MzbW53MDRxaGxybzcifQ.C9Z_o_r22BLSJFfyW4Ewlg', {
         attribution: 'Serhant Media Group',
@@ -36,19 +37,18 @@
         accessToken: 'your.mapbox.access.token',
       }).addTo(earth);
       var markerCustom = WE.marker([51.5, -0.09], '/ripple.gif', 200, 200).addTo(earth);
-      /*
-            var before = null;
-            requestAnimationFrame(function animate(now) {
-              var c = earth.getPosition();
-              var elapsed = before ? now - before : 0;
-              before = now;
-              earth.setCenter([c[0], c[1] + 0.1 * (elapsed / 30)]);
-              requestAnimationFrame(animate);
-            });
-            */
 
     }
-
+    function runAnimations() {
+      var before = null;
+      requestAnimationFrame(function animate(now) {
+        var c = earth.getPosition();
+        var elapsed = before ? now - before : 0;
+        before = now;
+        earth.setCenter([c[0], c[1] + 0.1 * (elapsed / 30)]);
+        requestAnimationFrame(animate);
+      });
+    }
   </script>
   <style>
     html,
@@ -170,7 +170,7 @@
 <body onload="initialize()">
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <div style="position: absolute; left: 50%;z-index: 9999;">
+  <div onclick="runAnimations()" style="position: absolute; left: 50%;z-index: 9999;">
     <div style="position: relative; left: -50%;">
       <h1 style="color:#160F76;font-size: 50px;width:100%;">
         SERHANT.</h1>
