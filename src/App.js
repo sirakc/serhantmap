@@ -19,11 +19,11 @@ class App extends React.Component {
               enableClouds: true,
               enableBackground: false,
               cloudsOpacity: 0.4,
-              cloudsTexture: "https://raw.githubusercontent.com/chrisrzhou/react-globe/master/textures/clouds2.png"
+              cloudsTexture: "https://raw.githubusercontent.com/chrisrzhou/react-globe/master/textures/clouds.png"
             }}
             lightOptions={{
               pointLightColor: 'white',
-              pointLightIntensity: 0,
+              pointLightIntensity: 0.1,
               pointLightPositionRadiusScales: [2, 1, -1],
             }}
             markers={markers}
