@@ -98,13 +98,6 @@ const markers = [
         value: 70
     },
     {
-        id: 15,
-        city: "",
-        color: "",
-        coordinates: [53.550341, 10.000654],
-        value: 70
-    },
-    {
         id: 16,
         city: "",
         color: "",
@@ -133,27 +126,11 @@ const markers = [
         coordinates: [19.32055625, -99.15170107],
         value: 70
     },
-
-
-    {
-        id: 20,
-        city: 'New York',
-        color: 'blue',
-        coordinates: [57.1482429, -2.0928095],
-        value: 70,
-    },
     {
         id: 21,
         city: 'New York',
         color: 'blue',
         coordinates: [-34.9261475, 138.60048999],
-        value: 70,
-    },
-    {
-        id: 22,
-        city: 'Singapore',
-        color: 'red',
-        coordinates: [52.3727598, 4.8936041],
         value: 70,
     },
     {
@@ -213,20 +190,6 @@ const markers = [
         value: 70
     },
     {
-        id: 31,
-        city: "",
-        color: "",
-        coordinates: [52.5170365, 13.3888599],
-        value: 70
-    },
-    {
-        id: 32,
-        city: "",
-        color: "",
-        coordinates: [52.4796992, -1.9026911],
-        value: 70
-    },
-    {
         id: 33,
         city: "",
         color: "",
@@ -248,32 +211,10 @@ const markers = [
         value: 70
     },
     {
-        id: 36,
-        city: "",
-        color: "",
-        coordinates: [53.0758196, 8.8071646],
-        value: 70
-    },
-
-    {
         id: 37,
         city: "",
         color: "",
         coordinates: [-27.4689682, 153.0234991],
-        value: 70
-    },
-    {
-        id: 38,
-        city: "",
-        color: "",
-        coordinates: [51.46769696, -2.5756073],
-        value: 70
-    },
-    {
-        id: 39,
-        city: "",
-        color: "",
-        coordinates: [50.8465573, 4.351697],
         value: 70
     },
     {
@@ -388,21 +329,6 @@ const markers = [
         coordinates: [19.333333, -96.666667],
         value: 70
     },
-
-    {
-        id: 17,
-        city: "",
-        color: "",
-        coordinates: [52.2319581, 21.0067249],
-        value: 70
-    },
-    {
-        id: 18,
-        city: "",
-        color: "",
-        coordinates: [52.30952817, 104.25836563],
-        value: 70
-    },
     {
         id: 19,
         city: "",
@@ -410,7 +336,91 @@ const markers = [
         coordinates: [33.1154683, 129.7874339],
         value: 70
     },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [42.3315509, -83.0466403],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [42.3602534, -71.0582912],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [38.8949855, -77.0365708],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [41.8755616, -87.6244212],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [47.6038321, -122.3300624],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [38.84559051, -104.827981],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [36.19123056, -115.15551567],
+        value: 70
+    },
 
 
+
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [35.7803977, -78.6390989],
+        value: 70
+    },
+
+
+
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [25.82616179, -80.21341324],
+        value: 70
+    },
+
+
+
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [45.5202471, -122.6741949],
+        value: 70
+    },
+    {
+        id: 19,
+        city: "",
+        color: "",
+        coordinates: [34.0536909, -118.2427666],
+        value: 70
+    },
 ];
 export default markers;
