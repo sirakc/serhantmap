@@ -11,7 +11,7 @@ const markers = [
         city: 'New York',
         color: 'blue',
         coordinates: [40.73061, -73.935242],
-        value: 25,
+        value: 60,
     },
     {
         id: 3,
