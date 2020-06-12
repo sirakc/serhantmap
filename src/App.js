@@ -1,16 +1,27 @@
 import React from 'react';
-
+import './style.css';
 import './App.css';
 import ReactGlobe from 'react-globe';
 import markerRenderer from './markerRenderer';
 import markers from './markers';
+
 class App extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      rotateCheck: true
+
+    };
+  }
   componentDidMount() {
 
   }
+
+
   render() {
     return (
+
       <React.Fragment>
         <div style={{ width: '100vw', height: '100vh' }}>
           <ReactGlobe
@@ -29,10 +40,25 @@ class App extends React.Component {
             markers={markers}
             markerOptions={{ renderer: markerRenderer }}
             cameraOptions={{
-              rotateSpeed: 0.3
+              rotateSpeed: 0.3,
+              autoRotateSpeed: 0.5,
+              enableAutoRotate: this.state.rotateCheck
             }}
-            
+
           />
+          <div style={{ position: "absolute", top: 0, left: 0 }}>
+
+            <label className="switch">
+              <input type="checkbox" checked={this.state.rotateCheck} onChange={() => {
+                this.setState({ rotateCheck: !this.state.rotateCheck });
+
+              }} />
+              <span className="slider round"></span>
+            </label>
+            <br />
+            <label htmlFor="switch">Rotation</label>
+
+          </div>
         </div>
       </React.Fragment >);
   }
