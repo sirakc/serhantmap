@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import ReactGlobe from 'react-globe';
 
 class App extends React.Component {
+
   componentDidMount() {
 
   }
   render() {
     return (
       <React.Fragment>
-        <button onClick={() => {
-          // var before = null;
-          // requestAnimationFrame(function animate(now) {
-          // var c = earth.getPosition();
-          // var elapsed = before ? now - before : 0;
-          //before = now;
-          // earth.setCenter([c[0], c[1] + 0.1 * (elapsed / 30)]);
-          //requestAnimationFrame(animate);
-          //});
-        }}> Enable Zoomie</button>
+        <div style={{ width: '100vw', height: '100vh' }}>
+          <ReactGlobe
+            globeOptions={{
+              texture: 'https://serving.photos.photobox.com/048522852493b7e952dfa462698c61315fc4bc71c601fb06d362635f0914453f0b23947c.jpg'
+            }}
+          />
+        </div>
       </React.Fragment >);
   }
 }
