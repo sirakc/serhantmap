@@ -23,14 +23,15 @@ class App extends React.Component {
             }}
             lightOptions={{
               pointLightColor: 'white',
-              pointLightIntensity: 0.1,
-              pointLightPositionRadiusScales: [2, 1, -1],
+              pointLightIntensity: 0.15,
+              pointLightPositionRadiusScales: [0, 0, 1],
             }}
             markers={markers}
             markerOptions={{ renderer: markerRenderer }}
             cameraOptions={{
               rotateSpeed: 0.3
             }}
+            
           />
         </div>
       </React.Fragment >);
