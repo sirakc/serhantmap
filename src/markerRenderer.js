@@ -8,7 +8,7 @@ function random(scaleFactor) {
 }
 
 const MARKER_COLOR = '#150F73';
-const MARKER_COMPANION_COLOR = '#141414';
+const MARKER_COMPANION_COLOR = '#150F73';
 
 export default function markerRenderer(marker) {
 
