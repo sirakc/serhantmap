@@ -15,7 +15,7 @@ class App extends React.Component {
         <div style={{ width: '100vw', height: '100vh' }}>
           <ReactGlobe
             globeOptions={{
-              texture: 'https://raw.githubusercontent.com/sirakc/serhantmap/master/src/images/serhant_earth.jpg',
+              texture: 'https://raw.githubusercontent.com/sirakc/serhantmap/master/src/images/serhant_earth.png',
               enableClouds: true,
               enableBackground: false,
               cloudsOpacity: 0.4,
